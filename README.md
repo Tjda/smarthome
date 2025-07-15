@@ -18,8 +18,16 @@ When leaving the house with the car, all I need to say is “Hey Google, open ga
 
 All of this silent intelligence is made possible by the reliability and versatility of Shelly devices. They measure, act, switch, and respond to context — allowing us to live with more comfort, safety, and efficiency, without giving up simplicity.
 
-House specs:
-OS: HomeAssistant;
-Voices Assistantes: Google and HomeAssistant (testing)
+Like my boss says — it’s only 5% done. This smarthome, and especially the UX of the house, is constantly evolving, and Shelly is a big part of that. 
+Looking forward to Gen 4!
 
-![smarthome floor 1](https://github.com/Tjda/smarthome/blob/main/imgs/Floor%201.png)
+The house has 5kWp solar panels and a 5kWh battery. 
+
+1st floor
+![smarthome 1st floor](https://github.com/Tjda/smarthome/blob/main/imgs/Floor%201.png)
+
+2nd floor
+![smarthome 2nd floor](https://github.com/Tjda/smarthome/blob/main/imgs/2nd%20floor.png)
+
+Cave
+![smarthome cave](https://github.com/Tjda/smarthome/blob/main/imgs/Cave.png)
