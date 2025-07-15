@@ -1,3 +1,4 @@
+#Shelly makes it feel like my home
 Hello! The project I’m sharing with you is my home, a space where Shelly devices play a fundamental role in our daily comfort, efficiency, and sustainability.
 
 This is not a house with fixed routines, because we don’t have them either. It’s a house that adapts to the weather, the seasons, our presence or absence, and even to our moments of rest. A home that responds with intelligence, but also with empathy.
@@ -21,7 +22,7 @@ All of this silent intelligence is made possible by the reliability and versatil
 Like my boss says — it’s only 5% done. This smarthome, and especially the UX of the house, is constantly evolving, and Shelly is a big part of that. 
 Looking forward to Gen 4!
 
-The house has 5kWp solar panels and a 5kWh battery. 
+The house has 5kWp solar panels and a 5kWh battery and use HomeAssistant to join all brands and technologies together.
 
 1st floor
 ![smarthome 1st floor](https://github.com/Tjda/smarthome/blob/main/imgs/Floor%201.png)
