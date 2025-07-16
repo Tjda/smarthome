@@ -1,0 +1,20 @@
+alias: Last rain day
+description: ""
+triggers:
+  - trigger: time
+    at: "06:50:00" #time to check information about the day
+conditions:
+  - type: is_precipitation_intensity
+    condition: device
+    device_id: <AccuWeather device id>
+    entity_id: <AccuWeather entity id for precipitation intensity>
+    domain: sensor
+    above: 2 #you can deffine the intensity here
+actions:
+  - action: input_datetime.set_datetime
+    metadata: {}
+    data:
+      date: "{{ now().strftime('%Y-%m-%d') }}" #if today the precipitation intensity is above 2, today will be the last rain day
+    target:
+      entity_id: input_datetime.last_rain_day
+mode: single
