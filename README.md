@@ -24,6 +24,8 @@ Looking forward to Gen 4!
 
 The house has 5kWp solar panels and a 5kWh battery and uses HomeAssistant to join all brands and technologies together.
 
+Video will be here (16-7)
+
 1st floor
 ![smarthome 1st floor](https://github.com/Tjda/smarthome/blob/main/imgs/Floor%201.png)
 
