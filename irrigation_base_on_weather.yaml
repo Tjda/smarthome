@@ -1,0 +1,57 @@
+alias: Automatic irrigation
+description: "Irrigation time base on weather and check if today will not rain and if it didn't rain in the last 3 days"
+triggers:
+  - trigger: time
+    at: "07:00:00" #time for trigger this automation and check all variables, and if is ok, start irrigation
+conditions:
+  - type: is_precipitation_intensity
+    condition: device
+    device_id: < your device id to temperature > #im using the AccuWeather
+    entity_id: < your ententy id to check if today will rain > #im using the AccuWeather
+    domain: sensor
+    below: 1
+  - condition: template
+    value_template: >-
+      {{ (now().date() - (states('input_datetime.last_rain_day') |
+      as_datetime).date()).days > 3 }} 
+  #this is doing a calculation, base on today date, and comparing with the last rain day - global variable (check the file last rain day global variable)
+  #if the difference is more than 3 days, moves on to actions
+actions:
+  - if:
+      - type: is_temperature
+        condition: device
+        device_id: < your device id to temperature > #im using the AccuWeather
+        entity_id: < your ententy id to temperature today > #im using the AccuWeather
+        domain: sensor
+        above: 30 #temperature in c for hot days, we can use a global variable too
+    then:
+      - sequence:
+          - type: turn_on
+            device_id: <your shelly 1 device id> #Shelly 1
+            entity_id: <your shelly 1 entity id> #Shelly 1
+            domain: switch
+          - delay:
+              hours: 0
+              minutes: 15 #irrigation time in minutes for hotdays
+              seconds: 0
+              milliseconds: 0
+          - type: turn_off
+            device_id: <your shelly 1 device id> #Shelly 1
+            entity_id: <your shelly 1 entity id> #Shelly 1
+            domain: switch
+    else:
+      - sequence:
+          - type: turn_on
+            device_id: <your shelly 1 device id> #Shelly 1
+            entity_id: <your shelly 1 entity id> #Shelly 1
+            domain: switch
+          - delay:
+              hours: 0
+              minutes: 7 #irrigation time in minutes for normal days bellow 30c
+              seconds: 0
+              milliseconds: 0
+          - type: turn_off
+            device_id: <your shelly 1 device id> #Shelly 1
+            entity_id: <your shelly 1 entity id> #Shelly 1
+            domain: switch
+mode: single
